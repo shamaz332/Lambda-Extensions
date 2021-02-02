@@ -1,8 +1,8 @@
 {
-  "name": "send-logs-to-s3-lambda-ext",
+  "name": "nodejs simple extension",
   "version": "0.1.0",
   "bin": {
-    "send-logs-to-s3-lambda-ext": "bin/send-logs-to-s3-lambda-ext.js"
+    "nodejs simple extension": "bin/nodejs simple extension.js"
   },
   "scripts": {
     "build": "tsc",
@@ -12,24 +12,16 @@
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.87.1",
-    "@types/aws-lambda": "^8.10.71",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
-    "aws-cdk": "1.87.1",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
+    "aws-cdk": "1.87.1",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudformation": "^1.87.1",
-    "@aws-cdk/aws-lambda": "^1.87.1",
-    "@aws-cdk/aws-s3": "^1.87.1",
-    "@aws-cdk/aws-secretsmanager": "^1.87.1",
     "@aws-cdk/core": "1.87.1",
-    "aws-lambda": "^1.0.6",
-    "cdk-datadog-integration": "^1.1.1",
-    "cdk-lambda-extensions": "^0.1.32",
     "source-map-support": "^0.5.16"
   }
 }

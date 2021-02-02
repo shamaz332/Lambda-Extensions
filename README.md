@@ -1,14 +1,15 @@
-# Welcome to your CDK TypeScript project!
+# Lambda Extension
+Lambda Extensions is designed to be the easiest way to plug in the tools you use today without complex installation or configuration management. You deploy extensions as Lambda layers
 
-This is a blank project for TypeScript development with CDK.
+## Referance Articles
+[Introducing AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+[Using Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html)
 
-## Useful commands
+[Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/)
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+[Easily integrate Lambda Extensions with your favorite observability and security tools](https://www.youtube.com/watch?v=6XIIKSJpMIQ&ab_channel=ServerlessLand)
+
+[AWS This Week: AWS Lambda Extensions, AWS Architecture Center redesign, and more!](https://www.youtube.com/watch?v=Kd9OQWJCpV4&ab_channel=ACloudGuru)
+[What are AWS Lambda Extensions and How It will Foster Serverless?](https://blog.thundra.io/what-are-aws-lambda-extensions-and-how-it-will-foster-serverless)
+[AWS Lambda Extensions: What are they and why do they matter](https://lumigo.io/blog/aws-lambda-extensions-what-are-they-and-why-do-they-matter/)

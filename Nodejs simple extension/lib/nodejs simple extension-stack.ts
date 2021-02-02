@@ -1,14 +1,11 @@
-import * as cdk from "@aws-cdk/core";
+import * as cdk from '@aws-cdk/core';
 import * as lambda from "@aws-cdk/aws-lambda";
 import * as path from "path";
-
-export class SendLogsToS3LambdaExtStack extends cdk.Stack {
+export class NodejsSimpleExtensionStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    //=============================================
-
-    const aa = new lambda.LayerVersion(this, "asd", {
+    const lambdaLayer = new lambda.LayerVersion(this, "asd", {
       code: lambda.Code.fromAsset("lambda-layers"),
 
     });
@@ -17,7 +14,7 @@ export class SendLogsToS3LambdaExtStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: "hello.handler",
       memorySize: 1024,
-      layers: [aa],
+      layers: [lambdaLayer],
     });
   }
 }
