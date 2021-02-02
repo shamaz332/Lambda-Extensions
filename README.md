@@ -1,6 +1,13 @@
 # Lambda Extension
 Lambda Extensions is designed to be the easiest way to plug in the tools you use today without complex installation or configuration management. You deploy extensions as Lambda layers
 
+# Simple Extension in Node.js
+## Key Points to remember in development of Lambda Extension
+
+* We will deploy Lambda Extension in lambda layers.
+* Give Name extensions to folder of lambda layer so it will automatically pick it as extension.
+* Lambda look only for one file in your extension folder so we will be using shell script file.In shell script file we will provide info about our extension
+
 ## Referance Articles
 [Introducing AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/)
 
