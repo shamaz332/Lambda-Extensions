@@ -25,6 +25,8 @@ Lambda automatically captures runtime logs and streams them to Amazon CloudWatch
 
 [AWS Lambda Logs API](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-logs-api.html)
 
+[Lambda Extensions API](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-extensions-api.html)
+
 [Using Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html)
 
 [Building Extensions for AWS Lambda](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/)
