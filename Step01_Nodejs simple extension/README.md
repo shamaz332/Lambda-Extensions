@@ -1,6 +1,8 @@
 
 [Lambda Extensions API](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-extensions-api.html)
 
+[Node Process Object Explained](https://www.freecodecamp.org/news/node-process-object-explained/)
+
 ### Create a simple lambda function with layer.
 
 ```javascript
