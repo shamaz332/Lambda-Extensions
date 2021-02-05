@@ -1,4 +1,7 @@
 # Lambda Extension
+
+![AWS WAF Diagram]()
+
 Lambda Extensions is designed to be the easiest way to plug in the tools you use today without complex installation or configuration management. You deploy extensions as Lambda layers
 
 ## AWS Lambda Logs API
