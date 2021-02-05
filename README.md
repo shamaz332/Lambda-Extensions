@@ -1,6 +1,6 @@
 # Lambda Extension
 
-![AWS WAF Diagram]()
+![AWS WAF Diagram](lambda_ext.png)
 
 Lambda Extensions is designed to be the easiest way to plug in the tools you use today without complex installation or configuration management. You deploy extensions as Lambda layers
 
