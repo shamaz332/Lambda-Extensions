@@ -26,6 +26,7 @@ const lambdaLayer = new lambda.LayerVersion(this, "asd", {
 * In extensions folder give read and write permessions to shell file by running this cmd (chmod 777 filename)
 
 [How create shell file in windows](https://www.youtube.com/watch?v=0Dv94qlpmd4&ab_channel=Tutplus24)
+
 [How create shell file in Linux](https://www.youtube.com/watch?v=eiBVlxxu3so&ab_channel=KrisOcchipinti)
 
 ```javascript
@@ -78,6 +79,39 @@ module.exports = {
     next,
 };
 ```
+## Register
+During Extension init, all extensions need to register with Lambda to receive events. Lambda uses the full file name of the extension to validate that the extension has completed the bootstrap sequence. Therefore, each Register API call must include the Lambda-Extension-Name header with the full file name of the extension.
+
+Internal extensions are started and stopped by the runtime process, so they are not permitted to register for the Shutdown event.
+**Path** – /extension/register
+**Method – POST**
+**Headers**
+Lambda-Extension-Name – The full file name of the extension. Required: yes. Type: string.
+**Body parameters**
+events – Array of the events to register for. Required: no. Type: array of strings. Valid strings: INVOKE, SHUTDOWN.
+**Response headers**
+Lambda-Extension-Identifier – Generated unique agent identifier (UUID string) that is required for all subsequent requests.
+
+## Next
+Extensions send a Next API request to receive the next event, which can be an Invoke event or a Shutdown event. The response body contains the payload, which is a JSON document that contains event data.
+
+The extension sends a Next API request to signal that it is ready to receive new events. This is a blocking call.
+
+Do not set a timeout on the GET call, as the extension can be suspended for a period of time until there is an event to return.
+
+**Path** – /extension/event/next
+
+**Method – GET**
+
+**Parameters**
+
+Lambda-Extension-Identifier – Unique identifier for extension (UUID string). Required: yes. Type: UUID string.
+
+**Response header**
+
+Lambda-Extension-Identifier – Unique agent identifier (UUID string).
+
+
 ```javascript
 #!/usr/bin/env node
 const { register, next } = require('./extensions-api');
@@ -96,7 +130,7 @@ function handleInvoke(event) {
     console.log('invoke');
 }
 
-(async function main() {
+( async function main() {
     process.on('SIGINT', () => handleShutdown('SIGINT'));
     process.on('SIGTERM', () => handleShutdown('SIGTERM'));
 
@@ -125,3 +159,7 @@ function handleInvoke(event) {
 })();
 
 ```
+
+
+
+

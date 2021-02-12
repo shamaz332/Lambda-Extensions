@@ -1,9 +1,6 @@
 const fetch = require('node-fetch');
 const {basename} = require('path');
 
-// API endpoint to register with lambda to receive events
-//https://docs.aws.amazon.com/lambda/latest/dg/runtimes-extensions-api.html
-
 const baseUrl = `http://${process.env.AWS_LAMBDA_RUNTIME_API}/2020-01-01/extension`;
 
 async function register() {
@@ -17,6 +14,8 @@ async function register() {
         }),
         headers: {
             'Content-Type': 'application/json',
+            // The extension name must match the file name of the extension itself that's in /opt/extensions/
+            // In this case that's: nodejs-example-logs-api-extension
             'Lambda-Extension-Name': basename(__dirname),
         }
     });

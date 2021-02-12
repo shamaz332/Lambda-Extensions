@@ -24,12 +24,14 @@ Today, you can use extensions with the following AWS and AWS Lambda Ready Partne
 
 ## Extensions can run in either of two modes – internal and external.
 
-* Internal extensions run as part of the runtime process, in-process with your code. They allow you to modify the startup of the runtime process using language-specific environment variables and wrapper scripts. Internal extensions enable use cases such as automatically instrumenting code.
+* Internal extensions allow you to configure the runtime environment and modify the startup of the runtime process. Internal extensions use language-specific environment variables and wrapper scripts, and start and shut down within the runtime process. Internal extensions run as separate threads within the runtime process, which starts and stops them.
 
-* External extensions allow you to run separate processes from the runtime but still within the same execution environment as the Lambda function. External extensions can start before the runtime process, and can continue after the runtime shuts down. External extensions enable use cases such as fetching secrets before the invocation, or sending telemetry to a custom destination outside of the function invocation. These extensions run as companion processes to Lambda functions.
+* An external extension runs as an independent process in the execution environment and continues to run after the function invoke is fully processed. An external extension must register for the Shutdown event, which triggers the extension to shut down. Because external extensions run as processes, you can write them in a different language than the function.
 
-## AWS Lambda Logs API
-Lambda automatically captures runtime logs and streams them to Amazon CloudWatch. This log stream contains the logs that your function code and extensions generate, and also the logs that Lambda generates as part of the function invocation.Lambda extensions can use the Lambda Runtime Logs API to subscribe to log streams directly from within the Lambda execution environment. Lambda streams the logs to the extension, and the extension can then process, filter, and send the logs to any preferred destination.
+## Lambda Extensions API
+The Extensions API builds on the existing Runtime API, which provides an HTTP API for custom runtimes to receive invocation events from Lambda. As an extension author, you can use the Extensions API to register for function and execution environment lifecycle events. In response to these events, you can start new processes or run logic.
+
+![AWS WAF Diagram](ext-env.png)
 
 ## Key Points to remember in development of Lambda Extension
 
